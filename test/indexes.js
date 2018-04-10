@@ -23,7 +23,7 @@ test('setup an index', async t => {
 	let indexes = await Post.indexes();
 	let lastIndex = indexes[indexes.length - 1];
 	t.same(lastIndex, {
-		v: 1,
+		v: 2,
 		key: {
 			title: 1
 		},
@@ -38,7 +38,7 @@ test('setup a unique index', async t => {
 	let indexes = await Task.indexes();
 	let lastIndex = indexes[indexes.length - 1];
 	t.same(lastIndex, {
-		v: 1,
+		v: 2,
 		unique: true,
 		key: {
 			name: 1
@@ -58,5 +58,5 @@ test('setup a unique index', async t => {
 	}
 
 	t.ok(err);
-	t.is(err.name, 'MongoError');
+	t.is(err.name, 'BulkWriteError');
 });

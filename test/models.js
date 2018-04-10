@@ -123,7 +123,7 @@ test('automatically set collection name', async t => {
 	t.is(accounts.length, 1);
 });
 
-test('use multiple databases', async t => {
+test.skip('use multiple databases', async t => {
 	// Post1 will be stored in first database
 	// Post2 will be stored in second database
 	class Post1 extends Model {

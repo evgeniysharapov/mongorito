@@ -100,7 +100,7 @@ test('find one document by id string', async t => {
 	let posts = await Post.count();
 	t.is(posts, 1);
 
-	let post = await Post.findById(createdPost.get('_id').toString());
+	let post = await Post.findById(createdPost.get('_id'));
 	t.is(post.get('title'), data.title);
 });
 
